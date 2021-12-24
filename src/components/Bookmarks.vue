@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import Button from './ui/Button.vue';
 import XIcon from './icons/XIcon.vue';
+import { formatDate } from '../helpers/utils';
 import TrashIcon from './icons/TrashIcon.vue';
 
 defineProps({
@@ -14,6 +15,7 @@ defineProps({
 
 const emit = defineEmits({});
 </script>
+
 <template>
   <section>
     <div class="mt-8">
@@ -41,7 +43,7 @@ const emit = defineEmits({});
         <tbody class="text-sm">
           <tr v-for="item in data" :key="item.id">
             <td class="p-4 text-center border border-gray-300">
-              {{ item.date }}
+              {{ formatDate(item.date) }}
             </td>
             <td class="p-4 text-center border border-gray-300">
               {{ item.operation }}

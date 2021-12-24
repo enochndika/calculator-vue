@@ -22,7 +22,9 @@ const findOperation = ({ left, right, opt }: FindOperationType) => {
 };
 
 const sortByDate = (value: Array<{ date: Date }>) => {
-  return value.sort((a, b) => +new Date(b.date) - +new Date(a.date));
+  if (value) {
+    return value.sort((a, b) => +new Date(b.date) - +new Date(a.date));
+  }
 };
 
 const formatDate = (value: Date) => {

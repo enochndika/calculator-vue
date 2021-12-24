@@ -16,6 +16,7 @@ export const store = createStore<State>({
   mutations: {
     addToBookmarks(state, payload) {
       state.bookmarks.push(payload);
+      console.log(state.bookmarks);
     },
     removeFromBookmarks(state, payload) {
       const id = state.bookmarks.map((item) => item.id).indexOf(payload);
